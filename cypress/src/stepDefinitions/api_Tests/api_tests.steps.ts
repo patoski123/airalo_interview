@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 
 Given("I obtain a valid access token", () => {
     cy.task<string>('getToken').then((token) => {
-        Cypress.env('apiToken', token); // Store it for use in When steps
+        Cypress.env('apiToken', token);
     });
     // cy.request({
     //     method: 'POST',
@@ -60,7 +60,6 @@ Then("the response should have status 200 and a valid order ID", () => {
 });
 
 When("I retrieve the list of eSIMs", () => {
-    // const token = SharedState.get<any>('apiToken');
     const token = Cypress.env('apiToken');
     const startDate = "2025-04-03";
     const endDate = "2025-04-04";
@@ -79,9 +78,9 @@ When("I retrieve the list of eSIMs", () => {
 Then("I should see 6 eSIMs with the package slug {string}", (expectedSlug) => {
     const esimList = SharedState.get<any>('esimList');
     expect(Array.isArray(esimList)).to.be.true;
-    console.log("✅ Response Body:", JSON.stringify(esimList, null, 2))
+    console.log("Response Body:", JSON.stringify(esimList, null, 2))
     // const filtered = esimList.filter((e: { package_id: string }) => e.package_id === expectedSlug);
-    // cy.log("✅ Response Body:", JSON.stringify(filtered, null, 2))
+    // cy.log("Response Body:", JSON.stringify(filtered, null, 2))
     // expect(filtered.length).to.eq(6);
 
 });

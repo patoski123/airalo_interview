@@ -35,7 +35,6 @@ export default defineConfig({
     async setupNodeEvents(on, config) {
       await addCucumberPreprocessorPlugin(on, config);
 
-      // Set up file preprocessor with esbuild
       on(
           'file:preprocessor',
           createBundler({
@@ -43,17 +42,17 @@ export default defineConfig({
           }),
       );
 
-      // ✅ Add custom Cypress task for token management
+      // Add custom Cypress task for token management
       on('task', {
         async getToken() {
           const now = Date.now();
 
           if (cachedToken && tokenExpiry && now < tokenExpiry) {
-            console.log('✅ Reusing cached token');
+            console.log('Reusing cached token');
             return cachedToken;
           }
 
-          console.log('🔄 Fetching new token...');
+          console.log('Fetching new token...');
           const res = await fetch('https://sandbox-partners-api.airalo.com/v2/token', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -65,7 +64,7 @@ export default defineConfig({
           });
 
           if (!res.ok) {
-            throw new Error(`❌ Failed to fetch token: ${res.status} ${res.statusText}`);
+            throw new Error(`Failed to fetch token: ${res.status} ${res.statusText}`);
           }
 
           interface TokenResponse {
@@ -85,7 +84,7 @@ export default defineConfig({
           cachedToken = data.data.access_token;
           tokenExpiry = now + data.data.expires_in * 1000;
 
-          console.log(`🆕 Token fetched. Expires at: ${new Date(tokenExpiry).toISOString()}`);
+          console.log(`Token fetched. Expires at: ${new Date(tokenExpiry).toISOString()}`);
           return cachedToken;
         }
       });

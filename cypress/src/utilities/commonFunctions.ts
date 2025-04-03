@@ -77,12 +77,10 @@ export class CommonFunctions {
             default:
                 throw new Error(`Unsupported currency code: ${currencyCode}`);
         }
-
         return `${symbol}${numericAmount.toFixed(2)}`; // Formats amount with two decimal places
     }
 
     static returnRegionalValue(coverage: string ): string {
-
         switch (coverage.toUpperCase()) {
             case 'JAPAN':
             case 'CHINA':
@@ -101,8 +99,5 @@ export class CommonFunctions {
             default:
                 throw new Error(`Unsupported regional value, please update the switch block: ${coverage}`);
         }
-
-
     }
-
 }
