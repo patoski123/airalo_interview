@@ -45,8 +45,8 @@ When("I place an order for 6 {string} eSIMs", (simName: string) => {
 
         },
     }).then((response) => {
-        cy.log("✅ Response Body sims", JSON.stringify(response.body.data, null, 2))
-        console.log("✅ Response Body:", JSON.stringify(response.body.data.sims, null, 2))
+        cy.log("Response Body sims", JSON.stringify(response.body.data, null, 2))
+        console.log("Response Body:", JSON.stringify(response.body.data.sims, null, 2))
         const orderId = response.body.data.id;
         SharedState.set('orderId', orderId);
         SharedState.set('orderResponse', response);
@@ -61,8 +61,8 @@ Then("the response should have status 200 and a valid order ID", () => {
 
 When("I retrieve the list of eSIMs", () => {
     const token = Cypress.env('apiToken');
-    const startDate = "2025-04-03";
-    const endDate = "2025-04-04";
+    const startDate = dayjs().format('YYYY-MM-DD');
+    const endDate = dayjs().add(1, 'day').format('YYYY-MM-DD');
 
     cy.request({
         method: 'GET',
