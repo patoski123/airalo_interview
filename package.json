@@ -1,0 +1,39 @@
+{
+  "name": "airalo_interview",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Patrick Obiaso",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "@cucumber/cucumber": "^11.1.0",
+    "@cypress/webpack-preprocessor": "^6.0.2",
+    "@types/cypress-cucumber-preprocessor": "^4.0.5",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.13.17",
+    "common-tags": "^1.8.2",
+    "cypress": "^14.2.1",
+    "cypress-plugin-api": "^2.11.2",
+    "cypress-real-events": "^1.13.0",
+    "cypress-recurse": "^1.35.2",
+    "esbuild": "^0.20.1",
+    "typescript": "^5.8.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/src/stepDefinitions/**/*.{js,ts}",
+    "json": {
+      "enabled": true,
+      "output": ".run/reports/json/[name].cucumber.json"
+    }
+  },
+  "dependencies": {
+    "dayjs": "^1.11.13",
+    "node-fetch": "^3.3.2"
+  }
+}
