@@ -1,6 +1,5 @@
 import { addCucumberPreprocessorPlugin } from '@badeball/cypress-cucumber-preprocessor';
-// @ts-expect-error it is expecting it
-import createEsbuildPlugin from '@badeball/cypress-cucumber-preprocessor/esbuild';
+import { createEsbuildPlugin } from '@badeball/cypress-cucumber-preprocessor/esbuild';
 import createBundler from '@bahmutov/cypress-esbuild-preprocessor';
 import { defineConfig } from 'cypress';
 import fetch from 'node-fetch';
