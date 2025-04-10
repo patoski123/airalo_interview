@@ -44,10 +44,7 @@ When('I place an order for 6 {string} eSIMs', (simName: string) => {
     },
   }).then((response) => {
     cy.log('Response Body sims', JSON.stringify(response.body.data, null, 2));
-    console.log(
-      'Response Body:',
-      JSON.stringify(response.body.data.sims, null, 2),
-    );
+    console.log('Response Body:', JSON.stringify(response.body.data.sims, null, 2));
     const orderId = response.body.data.id;
     SharedState.set('orderId', orderId);
     SharedState.set('orderResponse', response);

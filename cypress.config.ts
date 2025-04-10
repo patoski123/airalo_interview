@@ -50,23 +50,18 @@ export default defineConfig({
           }
 
           console.log('Fetching new token...');
-          const res = await fetch(
-            'https://sandbox-partners-api.airalo.com/v2/token',
-            {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                client_id: '7e29e2facf83359855f746fc490443e6',
-                client_secret: 'e5NNajm6jNAzrWsKoAdr41WfDiMeS1l6IcGdhmbb',
-                grant_type: 'client_credentials',
-              }),
-            },
-          );
+          const res = await fetch('https://sandbox-partners-api.airalo.com/v2/token', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              client_id: '7e29e2facf83359855f746fc490443e6',
+              client_secret: 'e5NNajm6jNAzrWsKoAdr41WfDiMeS1l6IcGdhmbb',
+              grant_type: 'client_credentials',
+            }),
+          });
 
           if (!res.ok) {
-            throw new Error(
-              `Failed to fetch token: ${res.status} ${res.statusText}`,
-            );
+            throw new Error(`Failed to fetch token: ${res.status} ${res.statusText}`);
           }
 
           interface TokenResponse {
@@ -86,9 +81,7 @@ export default defineConfig({
           cachedToken = data.data.access_token;
           tokenExpiry = now + data.data.expires_in * 1000;
 
-          console.log(
-            `Token fetched. Expires at: ${new Date(tokenExpiry).toISOString()}`,
-          );
+          console.log(`Token fetched. Expires at: ${new Date(tokenExpiry).toISOString()}`);
           return cachedToken;
         },
       });

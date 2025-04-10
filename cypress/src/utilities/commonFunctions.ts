@@ -20,9 +20,7 @@ export class CommonFunctions {
       case 'Global':
         return true;
       default:
-        throw new Error(
-          `Invalid area: ${area}. Expected 'Local', 'Regional', or 'Global'.`,
-        );
+        throw new Error(`Invalid area: ${area}. Expected 'Local', 'Regional', or 'Global'.`);
     }
   }
 
@@ -36,25 +34,19 @@ export class CommonFunctions {
     return this.formatCountryName(formattedCoverageName);
   }
 
-  static convertDataTableIntoObject(
-    dataTable: DataTable,
-  ): Record<string, string> {
+  static convertDataTableIntoObject(dataTable: DataTable): Record<string, string> {
     const [headers, rowValues] = dataTable.raw();
 
-    return headers.reduce<Record<string, string>>(
-      (resultObject, header: string, index: number) => {
-        resultObject[header] = rowValues[index];
-        return resultObject;
-      },
-      {},
-    );
+    return headers.reduce<Record<string, string>>((resultObject, header: string, index: number) => {
+      resultObject[header] = rowValues[index];
+      return resultObject;
+    }, {});
   }
 
   static formatCurrency(amount: string | number, currencyCode: string): string {
     let symbol: string;
 
-    const numericAmount =
-      typeof amount === 'string' ? parseFloat(amount) : amount;
+    const numericAmount = typeof amount === 'string' ? parseFloat(amount) : amount;
     if (isNaN(numericAmount)) {
       throw new Error('Invalid amount: Amount must be a valid number.');
     }
@@ -98,9 +90,7 @@ export class CommonFunctions {
       case 'AUSTRALIA':
         return 'Oceania';
       default:
-        throw new Error(
-          `Unsupported regional value, please update the switch block: ${coverage}`,
-        );
+        throw new Error(`Unsupported regional value, please update the switch block: ${coverage}`);
     }
   }
 }
