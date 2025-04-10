@@ -14,7 +14,7 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
-import './sharedState'
-import 'dayjs'
+import './commands';
+import './sharedState';
+import 'dayjs';
 import 'cypress-plugin-api';

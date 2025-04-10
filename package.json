@@ -2,8 +2,17 @@
   "name": "airalo_interview",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "lint": "eslint . --format stylish",
+    "lint:fix": "eslint . --fix --format stylish",
+    "prettier:fix": "prettier --write \"**/*.{js,json,md,ts,html,scss,feature}\"",
+    "postinstall": "husky install",
+    "check:all": "npm run lint && prettier --check \"**/*.{js,json,md,ts,html,scss,feature}\" && tsc --noEmit",
+    "format": "npm run lint:fix && npm run prettier:fix",
+    "remove:node_module-packageLockFile": "rm -rf node_modules package-lock.json"
   },
   "keywords": [],
   "author": "Patrick Obiaso",
@@ -14,16 +23,29 @@
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "@cucumber/cucumber": "^11.1.0",
     "@cypress/webpack-preprocessor": "^6.0.2",
+    "@eslint/js": "^9.24.0",
     "@types/cypress-cucumber-preprocessor": "^4.0.5",
     "@types/mocha": "^10.0.10",
     "@types/node": "^22.13.17",
+    "@typescript-eslint/eslint-plugin": "^8.29.1",
+    "@typescript-eslint/parser": "^8.29.1",
     "common-tags": "^1.8.2",
     "cypress": "^14.2.1",
     "cypress-plugin-api": "^2.11.2",
     "cypress-real-events": "^1.13.0",
     "cypress-recurse": "^1.35.2",
     "esbuild": "^0.20.1",
-    "typescript": "^5.8.2"
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-chai-friendly": "^1.0.1",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
+    "prettier-plugin-gherkin": "^3.1.2",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.29.1"
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": "cypress/src/stepDefinitions/**/*.{js,ts}",
@@ -35,5 +57,15 @@
   "dependencies": {
     "dayjs": "^1.11.13",
     "node-fetch": "^3.3.2"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix --cache --cache-location node_modules/.cache/eslint/",
+      "prettier --write"
+    ],
+    "*.{json,md,html,scss,feature}": [
+      "prettier --write"
+    ]
   }
+
 }

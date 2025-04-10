@@ -31,11 +31,11 @@ This is an automated test suite built using **Cypress**, **TypeScript**, and **C
 1. **Clone this repo:**
 2. Install nodejs version 20 >
 3. **Install dependencies:**
- npm install
+   npm install
 4. **Run Cypress tests:**
- npx run cypress
- click on E2E Testing
- select browser of choice
- click start E2E testing
- click the feature file you want to run
-5. or If you want to run headless then use `npx run cypress open` 
+   npx run cypress
+   click on E2E Testing
+   select browser of choice
+   click start E2E testing
+   click the feature file you want to run
+5. or If you want to run headless then use `npx run cypress open`
