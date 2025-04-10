@@ -3,7 +3,9 @@ import tseslint from 'typescript-eslint';
 import prettierPlugin from 'eslint-plugin-prettier';
 import prettierConfig from 'eslint-config-prettier';
 import chaiFriendly from 'eslint-plugin-chai-friendly';
-import simpleImportSort from 'eslint-plugin-simple-import-sort'; // ✅ Import sorter plugin
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import cypressPlugin from 'eslint-plugin-cypress';
+
 
 export default [
   {
@@ -17,6 +19,7 @@ export default [
       prettier: prettierPlugin,
       'chai-friendly': chaiFriendly,
       'simple-import-sort': simpleImportSort,
+      'cypress': cypressPlugin,
     },
     rules: {
       'prettier/prettier': 'error',
@@ -37,6 +40,7 @@ export default [
 
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
+      ...cypressPlugin.configs.recommended.rules,
     },
     languageOptions: {
       parser: tseslint.parser,
