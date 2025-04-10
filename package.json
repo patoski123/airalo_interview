@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "setup:hooks": "husky install",
     "lint": "eslint . --format stylish",
     "lint:fix": "eslint . --fix --format stylish",
     "prettier:fix": "prettier --write \"**/*.{js,json,md,ts,html,scss,feature}\"",

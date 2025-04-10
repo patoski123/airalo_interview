@@ -1,41 +1,82 @@
-# 🧪 Airalo Partner API - Cypress BDD Test Suite
+# 🧪 Interview - Cypress BDD Test Suite
 
-This is an automated test suite built using **Cypress**, **TypeScript**, and **Cucumber BDD** to validate key endpoints of the [Airalo Partner API](https://sandbox-partners-api.airalo.com/).
+![Node.js](https://img.shields.io/badge/node-%3E%3D20.0.0-green.svg)
+![ESLint](https://img.shields.io/badge/ESLint-configured-blue.svg)
+![Prettier](https://img.shields.io/badge/Prettier-configured-blueviolet.svg)
+![Husky](https://img.shields.io/badge/Husky-v9+-success.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-configured-informational.svg)
 
----
-
-## ✅ Features Covered
-
-- 🔐 **OAuth2 Authentication** with client credentials
-- 📦 **Placing orders** for eSIMs using the `/orders` endpoint
-- 📦 **Placing orders** for eSIMs using the ui
-- 📄 **Retrieving eSIMs** using the `/sims` endpoint with filtering
-- 🔁 **Token caching** using `cy.task()` to avoid unnecessary token generation
-- 📅 **Dynamic date filtering** using Day.js
+An automated test suite built using **Cypress**, **TypeScript**, and **Cucumber BDD** to validate key endpoints of the [Airalo Partner API](https://sandbox-partners-api.airalo.com/).
 
 ---
 
-## 🛠 Tech Stack
+## ⚙️ Pre-requisites
 
-- [Cypress](https://www.cypress.io/) for end-to-end testing
-- [Cucumber Preprocessor](https://github.com/badeball/cypress-cucumber-preprocessor) for BDD-style specs
-- [TypeScript](https://www.typescriptlang.org/)
-- [Day.js](https://day.js.org/) for time manipulation
-- `cy.task()` for Node-side token caching
-- `node-fetch` to call the API from Cypress config
+Before you start, ensure you have the following installed:
 
----
+- ✅ **Node.js v20 or higher**
 
-## 📦 Installation & Setup
+  Check your version:
+  ```bash
+  node -v
 
-1. **Clone this repo:**
-2. Install nodejs version 20 >
-3. **Install dependencies:**
+Features Covered
+🔐 OAuth2 Authentication with client credentials
+
+📦 Placing orders for eSIMs using the /orders endpoint
+
+🌐 Placing orders for eSIMs via the UI flow
+
+📄 Retrieving eSIMs using the /sims endpoint with filtering
+
+🔁 Token caching using cy.task() to avoid unnecessary token regeneration
+
+📅 Dynamic date filtering using Day.js
+
+
+🛠 Tech Stack
+Cypress for end-to-end testing
+
+Cucumber Preprocessor for BDD-style specs
+
+TypeScript
+
+Day.js for time manipulation
+
+cy.task() for Node.js token caching
+
+node-fetch to call the API from Cypress config
+
+✅ Husky & Lint-Staged for pre-commit hooks
+
+✅ ESLint + Prettier for code consistency and formatting
+
+📦 Installation & Setup
+1. Clone the repository
+   bash
+   Copy
+   Edit
+   git clone <repository-url>
+   cd <repository-folder>
+2. Install dependencies
    npm install
-4. **Run Cypress tests:**
-   npx run cypress
-   click on E2E Testing
-   select browser of choice
-   click start E2E testing
-   click the feature file you want to run
-5. or If you want to run headless then use `npx run cypress open`
+3. Setup Git Hooks (Important ✅)
+   npm run setup:hooks
+4. Run Cypress tests
+   npx cypress open
+   Then:
+
+   - Click E2E Testing
+   - Select your browser
+   - Click Start E2E testing
+   - Select the feature file you want to run
+
+🧹 Code Quality & Automation
+Lint & Format Code
+Check linting, formatting, and type safety manually:
+- npm run check:all
+
+Auto-fix issues:
+- npm run format
+
+
