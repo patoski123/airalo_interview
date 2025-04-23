@@ -1,7 +1,6 @@
-import { Given, Then, When } from '@badeball/cypress-cucumber-preprocessor';
+import {Given, Then, When} from '@badeball/cypress-cucumber-preprocessor';
+import {SharedState} from '@support/sharedState';
 import dayjs from 'dayjs';
-
-import { SharedState } from '../../../support/sharedState';
 
 Given('I obtain a valid access token', () => {
   cy.task<string>('getToken').then((token) => {

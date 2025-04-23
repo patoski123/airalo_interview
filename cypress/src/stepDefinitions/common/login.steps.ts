@@ -1,4 +1,4 @@
-import { Given } from '@badeball/cypress-cucumber-preprocessor';
+import {Given} from '@badeball/cypress-cucumber-preprocessor';
 
 Given(/^I navigate to airalo website$/, function () {
   cy.visit('/');

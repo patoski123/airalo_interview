@@ -1,13 +1,12 @@
-import { DataTable, Given, Then } from '@badeball/cypress-cucumber-preprocessor';
-
-import { SharedState } from '../../../support/sharedState';
-import { SelectEsimPackages } from '../../pageObjects/selectEsimPackages';
-import { CommonFunctions as commonFunctions } from '../../utilities/commonFunctions';
+import {DataTable, Given, Then} from '@badeball/cypress-cucumber-preprocessor';
+import {SelectEsimPackages} from '@pageObjects/selectEsimPackages';
+import {SharedState} from '@support/sharedState';
+import {CommonFunctions as commonFunctions} from '@utils/commonFunctions';
 
 const selectEsimPackages = new SelectEsimPackages();
 
 Given(/^I search and select "([^"]*)" under "([^"]*)" region$/, function (coverage: string, region: string) {
-  cy.get('[data-testid="search-input"]').type(coverage, { delay: 100 });
+  cy.get('[data-testid="search-input"]').type(coverage, {delay: 100});
   cy.get('ul.countries-list.position-absolute')
     .should('be.visible')
     .within(() => {
@@ -40,7 +39,7 @@ Given(/^I select the e-sim package that have the following details$/, function (
     .closest('[data-testid="sim-package-item"]') // Ensure we are in the correct package item container
     .should('be.visible')
     .within(() => {
-      cy.get('button.btn.btn-sim-item-btn.btn-block').scrollIntoView().should('be.visible').click();
+      cy.get('button.btn.btn-sim-item-btn.btn-block').click();
     });
 });
 

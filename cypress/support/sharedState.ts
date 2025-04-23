@@ -20,4 +20,4 @@ class SharedState {
   }
 }
 
-export { SharedState };
+export {SharedState};

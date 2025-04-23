@@ -1,7 +1,21 @@
 {
   "plugins": ["prettier-plugin-gherkin"],
+
   "printWidth": 200,
   "tabWidth": 2,
   "singleQuote": true,
-  "trailingComma": "all"
+  "trailingComma": "all",
+  "semi": true,
+  "bracketSpacing": false,
+  "arrowParens": "always",
+  "endOfLine": "lf",
+  "proseWrap": "always",
+  "overrides": [
+    {
+      "files": ["*.md", "*.mdx"],
+      "options": {
+        "proseWrap": "never"
+      }
+    }
+  ]
 }

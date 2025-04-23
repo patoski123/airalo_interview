@@ -1,17 +1,22 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "lib": ["ES2020", "DOM"],
-    "types": ["cypress", "node"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "baseUrl": ".",
+    "lib": ["DOM", "ES2020"],
+    "paths": {
+      "@support/*": ["cypress/support/*"],
+      "@pageObjects/*": ["cypress/src/pageObjects/*"],
+      "@utils/*": ["cypress/src/utilities/*"]
+    },
+    "strict": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "resolveJsonModule": true,
     "noEmit": true,
-    "strict": true,
-    "downlevelIteration": true,
-    "skipLibCheck": true
+    "types": ["node", "cypress", "cypress-cucumber-preprocessor"]
   },
-  "include": ["cypress.config.ts", "cypress/**/*.ts"],
+  "include": ["cypress/**/*.ts", "cypress.config.ts"],
   "exclude": ["node_modules", "dist"]
 }
