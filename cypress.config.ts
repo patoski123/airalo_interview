@@ -1,7 +1,7 @@
-import { addCucumberPreprocessorPlugin } from '@badeball/cypress-cucumber-preprocessor';
-import { createEsbuildPlugin } from '@badeball/cypress-cucumber-preprocessor/esbuild';
+import {addCucumberPreprocessorPlugin} from '@badeball/cypress-cucumber-preprocessor';
+import {createEsbuildPlugin} from '@badeball/cypress-cucumber-preprocessor/esbuild';
 import createBundler from '@bahmutov/cypress-esbuild-preprocessor';
-import { defineConfig } from 'cypress';
+import {defineConfig} from 'cypress';
 import fetch from 'node-fetch';
 
 let cachedToken: string | null = null;
@@ -51,7 +51,7 @@ export default defineConfig({
           console.log('Fetching new token...');
           const res = await fetch('https://sandbox-partners-api.airalo.com/v2/token', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
               client_id: '7e29e2facf83359855f746fc490443e6',
               client_secret: 'e5NNajm6jNAzrWsKoAdr41WfDiMeS1l6IcGdhmbb',

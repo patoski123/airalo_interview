@@ -1,4 +1,4 @@
-import { DataTable } from '@badeball/cypress-cucumber-preprocessor';
+import {DataTable} from '@badeball/cypress-cucumber-preprocessor';
 
 export class CommonFunctions {
   static formatCountryName(countryName: string): string {

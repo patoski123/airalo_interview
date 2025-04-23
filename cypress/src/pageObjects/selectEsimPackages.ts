@@ -106,4 +106,4 @@ class SelectEsimPackages {
   }
 }
 
-export { SelectEsimPackages };
+export {SelectEsimPackages};

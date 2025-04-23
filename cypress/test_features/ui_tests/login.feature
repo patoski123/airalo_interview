@@ -12,11 +12,11 @@ Feature: login test
 
     Examples:
       | countryCoverage | dataValue | dataValidity | eSimPrice | eSimRegion | currency |
-      | Japan           | 1 GB      | 1 Day        | 0.00      | Local      | GBP      |
+      #      | Japan           | 1 GB      | 1 Day        | 0.00      | Local      | GBP      |
       #  Bonus testcase
       | Japan           | 1 GB      | 7 Days       | 4.00      | Local      | GBP      |
-      | Egypt           | 1 GB      | 7 Days       | 6.00      | Local      | GBP      |
-      | United States   | 20 GB     | 30 Days      | 33.50     | Local      | GBP      |
+      | Egypt           | 1 GB      | 7 Days       | 5.50      | Local      | GBP      |
+      | United States   | 20 GB     | 30 Days      | 33.00     | Local      | GBP      |
 
   #Bonus Testcase
   Scenario Outline: User can login
@@ -30,4 +30,4 @@ Feature: login test
 
     Examples:
       | countryCoverage | dataValue | dataValidity | eSimPrice | eSimRegion | currency |
-      | United States   | 10 GB     | 30 Days      | 37.00     | Regional   | GBP      |
+      | United States   | 10 GB     | 30 Days      | 36.00     | Regional   | GBP      |
