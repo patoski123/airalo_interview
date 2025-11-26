@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "setup:hooks": "husky install",
+    "prepare": "husky",
     "lint": "npm exec -- eslint . --format stylish",
     "lint:fix": "npm exec -- eslint . --fix --format stylish",
     "prettier:fix": "prettier --write \"**/*.{js,json,md,ts,html,scss,feature}\"",
