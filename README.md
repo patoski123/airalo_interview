@@ -36,8 +36,8 @@ TypeScript
 
 1. Clone the repository bash Copy Edit git clone <repository-url> cd <repository-folder>
 2. Install dependencies npm install
-3. Setup Git Hooks (Important ✅) npm run setup:hooks
-4. Run Cypress tests npx cypress open Then:
+3. To run Cypress tests, in the terminal run the script: npx cypress open
+   Then follow the below instruction
    - Click E2E Testing
    - Select your browser
    - Click Start E2E testing
