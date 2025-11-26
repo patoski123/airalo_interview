@@ -10,7 +10,7 @@ An automated test suite built using **Cypress**, **TypeScript**, and **Cucumber 
 
 Before you start, ensure you have the following installed:
 
-- ✅ **Node.js v20 or higher**
+- ✅ **Node.js v22 or higher**
 
   Check your version:
 
@@ -20,27 +20,13 @@ Before you start, ensure you have the following installed:
 
 Features Covered 🔐 OAuth2 Authentication with client credentials
 
-📦 Placing orders for eSIMs using the /orders endpoint
-
-🌐 Placing orders for eSIMs via the UI flow
-
-📄 Retrieving eSIMs using the /sims endpoint with filtering
-
-🔁 Token caching using cy.task() to avoid unnecessary token regeneration
-
-📅 Dynamic date filtering using Day.js
+📦 Adding the highest priced item in the cart
 
 🛠 Tech Stack Cypress for end-to-end testing
 
 Cucumber Preprocessor for BDD-style specs
 
 TypeScript
-
-Day.js for time manipulation
-
-cy.task() for Node.js token caching
-
-node-fetch to call the API from Cypress config
 
 ✅ Husky & Lint-Staged for pre-commit hooks
 
