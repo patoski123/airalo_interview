@@ -2,7 +2,7 @@
 
 ![Node.js](https://img.shields.io/badge/node-%3E%3D20.0.0-green.svg) ![ESLint](https://img.shields.io/badge/ESLint-configured-blue.svg) ![Prettier](https://img.shields.io/badge/Prettier-configured-blueviolet.svg) ![Husky](https://img.shields.io/badge/Husky-v9+-success.svg) ![TypeScript](https://img.shields.io/badge/TypeScript-configured-informational.svg)
 
-An automated test suite built using **Cypress**, **TypeScript**, and **Cucumber BDD** to validate key endpoints of the [Airalo Partner API](https://sandbox-partners-api.airalo.com/).
+An automated test suite built using **Cypress**, **TypeScript**, and **Cucumber BDD** to validate key endpoints).
 
 ---
 
@@ -52,7 +52,6 @@ node-fetch to call the API from Cypress config
 2. Install dependencies npm install
 3. Setup Git Hooks (Important ✅) npm run setup:hooks
 4. Run Cypress tests npx cypress open Then:
-
    - Click E2E Testing
    - Select your browser
    - Click Start E2E testing

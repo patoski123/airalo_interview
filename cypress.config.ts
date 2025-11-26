@@ -2,10 +2,8 @@ import {addCucumberPreprocessorPlugin} from '@badeball/cypress-cucumber-preproce
 import {createEsbuildPlugin} from '@badeball/cypress-cucumber-preprocessor/esbuild';
 import createBundler from '@bahmutov/cypress-esbuild-preprocessor';
 import {defineConfig} from 'cypress';
-import fetch from 'node-fetch';
-
-let cachedToken: string | null = null;
-let tokenExpiry: number | null = null;
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 export default defineConfig({
   e2e: {
@@ -38,57 +36,11 @@ export default defineConfig({
         }),
       );
 
-      // Add custom Cypress task for token management
-      on('task', {
-        async getToken() {
-          const now = Date.now();
-
-          if (cachedToken && tokenExpiry && now < tokenExpiry) {
-            console.log('Reusing cached token');
-            return cachedToken;
-          }
-
-          console.log('Fetching new token...');
-          const res = await fetch('https://sandbox-partners-api.airalo.com/v2/token', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-              client_id: '7e29e2facf83359855f746fc490443e6',
-              client_secret: 'e5NNajm6jNAzrWsKoAdr41WfDiMeS1l6IcGdhmbb',
-              grant_type: 'client_credentials',
-            }),
-          });
-
-          if (!res.ok) {
-            throw new Error(`Failed to fetch token: ${res.status} ${res.statusText}`);
-          }
-
-          interface TokenResponse {
-            data: {
-              access_token: string;
-              expires_in: number;
-              token_type: string;
-            };
-            meta: {
-              message: string;
-            };
-          }
-
-          const raw = await res.json();
-          const data = raw as TokenResponse;
-
-          cachedToken = data.data.access_token;
-          tokenExpiry = now + data.data.expires_in * 1000;
-
-          console.log(`Token fetched. Expires at: ${new Date(tokenExpiry).toISOString()}`);
-          return cachedToken;
-        },
-      });
-
       return config;
     },
-    baseUrl: 'https://www.airalo.com/',
+    baseUrl: 'https://www.saucedemo.com/',
     env: {
+      ...process.env,
       cucumberJson: {
         generate: true,
         output: '.run/reports/json/[name].cucumber.json',

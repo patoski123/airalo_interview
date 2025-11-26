@@ -28,6 +28,7 @@ appToken/
 
 # Cypress-specific ignores
 cypress.env.json
+.env
 cypress/.DS_Store
 
 # macOS-specific system files
