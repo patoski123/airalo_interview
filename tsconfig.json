@@ -8,7 +8,8 @@
     "paths": {
       "@support/*": ["cypress/support/*"],
       "@pageObjects/*": ["cypress/src/pageObjects/*"],
-      "@utils/*": ["cypress/src/utilities/*"]
+      "@utils/*": ["cypress/src/utilities/*"],
+      "@types/*": ["cypress/types/*.ts"]
     },
     "strict": true,
     "esModuleInterop": true,
