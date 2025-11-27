@@ -9,13 +9,12 @@ reporter.generate({
       name: 'chrome',
       version: 'latest',
     },
-    device: 'CI Pipeline',
+    device: 'Local machine',
     platform: {
       name: process.platform,
       version: process.version,
     },
   },
-  // optional, but nice if you tag scenarios
   customData: {
     title: 'Execution Info',
     data: [
