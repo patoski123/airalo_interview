@@ -18,9 +18,9 @@ reporter.generate({
   customData: {
     title: 'Execution Info',
     data: [
-      { label: 'Project', value: 'patrick_interview' },
-      { label: 'Run Date', value: new Date().toISOString() },
-      { label: 'Environment', value: process.env.NODE_ENV || 'local' },
+      {label: 'Project', value: 'patrick_interview'},
+      {label: 'Run Date', value: new Date().toISOString()},
+      {label: 'Environment', value: process.env.NODE_ENV || 'local'},
     ],
   },
 });
