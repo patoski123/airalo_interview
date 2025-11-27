@@ -10,7 +10,10 @@
     "prettier:fix": "prettier --write \"**/*.{js,json,md,ts,html,scss,feature}\"",
     "check:all": "npm run lint && prettier --check \"**/*.{js,json,md,ts,html,scss,feature}\" && tsc --noEmit",
     "format": "npm run lint:fix && npm run prettier:fix",
-    "remove:node_module-packageLockFile": "rm -rf node_modules package-lock.json"
+    "remove:node_module-packageLockFile": "rm -rf node_modules package-lock.json",
+    "run:specificFeature": "npx cypress run --spec cypress/test_features/ui_tests/login.feature",
+    "report:bdd": "node scripts/generate-cucumber-report.mjs",
+    "report:all": "npm run report:bdd"
   },
   "keywords": [],
   "author": "Patrick Obiaso",
@@ -43,6 +46,7 @@
     "globals": "^16.0.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
+    "multiple-cucumber-html-reporter": "^3.9.3",
     "prettier": "^3.5.3",
     "prettier-plugin-gherkin": "^3.1.2",
     "typescript": "^5.8.3"
