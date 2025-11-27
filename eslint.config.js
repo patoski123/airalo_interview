@@ -36,7 +36,7 @@ const testingGlobals = {
 
 export default [
   {
-    ignores: ['eslint.config.js', 'node_modules', 'dist', 'coverage'],
+    ignores: ['eslint.config.js', 'node_modules', 'dist', 'coverage', '.run/**'],
   },
   js.configs.recommended,
 
